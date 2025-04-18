@@ -12,15 +12,14 @@ public class main : MonoBehaviour
     public Transform Title;
     public TextMeshProUGUI scoreboard;
     public AudioClip buttonClickSound; // Sound for button clicks
-    public GameObject[] heartObjects; // Array to hold the heart GameObjects // Reference to display lives
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject[] heartObjects;
     void Start()
     {
         score = 0;
         lives = 3;
         GameOver = false;
         scoreboard.text = "0";
-        // Find all heart objects if not assigned
+
         if (heartObjects == null || heartObjects.Length == 0)
         {
             heartObjects = new GameObject[3];
@@ -55,7 +54,7 @@ public class main : MonoBehaviour
     {
         lives--;
         UpdateHearts();
-        
+
         if (lives <= 0)
         {
             GameOver = true;
